@@ -1,2 +1,26 @@
-# adventofcode17
-🔥🎄🎅
+
+# Advent of Code 2017 #
+
+These are my solutions for the Advent of Code 2017 coding challenges. Went
+with C++ because I wanted to get the feel for it again after years of not
+using it at all!
+
+## Setup ##
+
+I personally used g++ to compile my programs. It's rather straightforward
+but you can use whichever C++ compiler you please as long as it uses at least
+C++11 as I used some of its features in parts of my code.
+
+    $ g++ 1a.cpp -o ../bin/1a ; ./../bin/1a
+
+I have included my input data in the source code itself because I can't be
+bothered to invest time in reading file data and all that, especially
+considering I'm doing this in C++ and it's somewhat of a pain. This works way
+nicer and shouldn't be too much of an annoyance.
+
+## License ##
+
+There's no license. This is just for fun and learning so take from it what you
+want as you please. Keep in mind this was done as a learning exercise for
+getting back into a bit of C++. In that sense the solutions may and quite
+probably are not optimal. Either way, Merry Christmas!
