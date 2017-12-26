@@ -1,6 +1,7 @@
 #include <iostream>
 #include <limits>
 
+// Input data from the website.
 int input[16][16] = {
     {  157,  564,  120,  495,  194,  520,  510,  618,  244,  443,  471,  473,  612,  149,  506,  138 },
     { 1469,  670,   47,  604, 1500,  238, 1304, 1426,   54,  749, 1218, 1409,   60,   51, 1436,  598 },
@@ -21,20 +22,26 @@ int input[16][16] = {
 };
 
 int main() {
-    int sum = 0;
+    int sum = 0; // Sum of our calculations.
 
+    // Iterate over rows.
     for (int i = 0; i < 16; i++) {
+        // Set the low and high values to ones that will always be passed.
         int low  = std::numeric_limits<int>::max();
         int high = 0;
 
+        // Start iterating over values in the row.
         for (const int &value : input[i]) {
+            // Check if it passes one of our previous values.
             if (value < low) low = value;
             if (value > high) high = value;
         }
 
+        // After the high and low have been found out subtract and add them to the sum.
         sum += high - low;
     }
 
+    // Print the sum.
     std::cout << sum << std::endl;
 
     return 0;

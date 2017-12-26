@@ -1,5 +1,6 @@
 #include <iostream>
 
+// Input data from the website.
 int input[16][16] = {
     {  157,  564,  120,  495,  194,  520,  510,  618,  244,  443,  471,  473,  612,  149,  506,  138 },
     { 1469,  670,   47,  604, 1500,  238, 1304, 1426,   54,  749, 1218, 1409,   60,   51, 1436,  598 },
@@ -20,27 +21,31 @@ int input[16][16] = {
 };
 
 int main() {
-    int sum = 0;
+    int sum = 0; // Sum of our calculations.
 
+    // Iterate over rows.
     for (int i = 0; i < 16; i++) {
         int a = 0;
         int b = 0;
 
+        // Iterate over values and compare each to the values in the same row.
         for (const int &value : input[i]) {
             for (const int &divider : input[i])
+                // Make sure we are not diving the same value. Check that modulo is zero.
                 if (value != divider && value % divider == 0) {
                     a = value;
                     b = divider;
 
-                    break;
+                    break; // Break the loop once a match has been found.
                 }
 
-            if (a & b) break;
+            if (a & b) break;  // If two matches have been found we can break this loop as well.
         }
 
-        sum += a / b;
+        sum += a / b; // Add the division to the sum.
     }
 
+    // Print out our sum.
     std::cout << sum << std::endl;
 
     return 0;
