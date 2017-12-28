@@ -16,7 +16,7 @@ int main() {
     int high   = 1; // Highest value in the layer.
 
     // Get information on the input number and its layer.
-    for (int i = 1; high < input; i++) {
+    for (int i = 1; high < input; ++i) {
         layer  = i;
         amount = 8 * layer;
         low    = high + 1;
@@ -29,7 +29,7 @@ int main() {
     // Populate the distances array with the distances from the highest value
     // which also at the same time logically has the highest distance. Only
     // populate to the halfway point of a row since this has the lowest distance.
-    for (int i = 0; i < layer + 1; i++) {
+    for (int i = 0; i < layer + 1; ++i) {
         distances[i] = (layer * 2) - i;
 
         // Mirror results as well for ping pong iteration.
@@ -40,7 +40,7 @@ int main() {
     int counter = 0;
 
     // Iterate from the highest number to the lowest as this makes things easier.
-    for (int i = high; i >= low; i--) {
+    for (int i = high; i >= low; --i) {
         // Check if our number matches the iteration number. If so, lookup the distance.
         if (i == input) {
             steps = distances[counter % (layer * 2)];

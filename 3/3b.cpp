@@ -13,7 +13,7 @@ void printGrid(std::vector<std::vector<long> > grid) {
     long topValue = 0; // Store the highest entry.
 
     // Begin iterating over rows in the grid and select their top value.
-    for (int i = 0; i < grid.size(); i++) {
+    for (int i = 0; i < grid.size(); ++i) {
         long curValue = *max_element(grid[i].begin(), grid[i].end());
 
         // Check if this value is bigger than our current top. If so, replace it.
@@ -27,7 +27,7 @@ void printGrid(std::vector<std::vector<long> > grid) {
     std::string separator = "";
 
     // Iterate over the size of the grid multiplied by the max digits and add to the separator.
-    for (int i = 0; i < grid.size() * (topDigits + 1) + 1; i++)
+    for (int i = 0; i < grid.size() * (topDigits + 1) + 1; ++i)
         separator += "─";
 
     // Print it out as bounds for the top most row.
@@ -42,7 +42,7 @@ void printGrid(std::vector<std::vector<long> > grid) {
 
             // Only create further padding if required. Otherwise increment and add.
             if (curDigits < topDigits)
-                for (int i = 0; i < topDigits - curDigits; i++)
+                for (int i = 0; i < topDigits - curDigits; ++i)
                     padding += " ";
 
             // Apply a bounding character and padding around this value.
@@ -86,7 +86,7 @@ int main() {
     int dy = 0;
 
     // Begin iterating over cells.
-    for (int i = 0; i < size * size; i++) {
+    for (int i = 0; i < size * size; ++i) {
         // Apply movement.
         px += dx;
         py += dy;
