@@ -1,24 +1,13 @@
 #include <iostream>
 #include <vector>
-#include <string>
 #include <fstream>
-#include <sstream>
 
 int main() {
-    std::vector<int> jumps;
+    // Create a new input filestream to read from.
+    std::ifstream filestream("input.txt");
 
-    // Create a new input filestream for the input data.
-    std::ifstream input("input.txt");
-
-    // Read lines from the input file.
-    for (std::string line; getline(input, line);) {
-        std::stringstream stream(line); // Create a new string stream for conversion.
-
-        int converted = 0;   // The converted value.
-        stream >> converted; // Stream and convert.
-
-        jumps.push_back(converted); // Push the new value to the vector.
-    }
+    // Input data from the website read and converted directly into an integer vector.
+    std::vector<int> jumps((std::istream_iterator<int>(filestream)), {});
 
     int steps = 0; // Number of steps taken so far.
     int index = 0; // Navigation index within the jumps vector.

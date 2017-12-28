@@ -7,7 +7,7 @@ int main() {
     std::ifstream filestream("input.txt");
 
     // Input data from the website. Using a string since we will be accessing single digits.
-    std::string input((std::istreambuf_iterator<char>(filestream)), (std::istreambuf_iterator<char>()));
+    std::string input((std::istreambuf_iterator<char>(filestream)), {});
 
     bool wrap = false; // Stores whether the iteration has wrapped or not.
     int index = 0;     // Current index of the iteration.
