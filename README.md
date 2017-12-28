@@ -13,11 +13,6 @@ C++11 as I used some of its features in parts of my code.
 
     $ g++ 1a.cpp -o ../bin/1a -g -Wall -std=c++11; ./../bin/1a
 
-I have included my input data in the source code itself because I can't be
-bothered to invest time in reading file data and all that, especially
-considering I'm doing this in C++ and it's somewhat of a pain. This works way
-nicer and shouldn't be too much of an annoyance.
-
 For debugging at certain points I used Valgrind. Specifically for memory
 debugging. As such the extra *-g* flag was added to g++.
 

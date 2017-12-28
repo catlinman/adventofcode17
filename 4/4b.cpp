@@ -1,12 +1,13 @@
 #include <iostream>
+#include <stack>
 #include <vector>
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
 
-int main() {
-    std::vector<std::string> phrases;
+int main(int argc, char ** argv) {
+    std::stack<std::string> phrases;
 
     // Create a new input filestream for the input data.
     std::ifstream input("input.txt");
@@ -42,7 +43,7 @@ int main() {
         }
 
         // Only added phrases that are verified.
-        if (valid) phrases.push_back(line);
+        if (valid) phrases.push(line);
     }
 
     // Output the final count of valid phrases.
