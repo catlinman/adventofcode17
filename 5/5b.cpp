@@ -7,7 +7,7 @@ int main() {
     std::ifstream filestream("input.txt");
 
     // Input data from the website read and converted directly into an integer vector.
-    std::vector<int> jumps((std::istream_iterator<int>(filestream)), {});
+    std::vector<int> jumps(std::istream_iterator<int>(filestream), {});
 
     int steps = 0; // Number of steps taken so far.
     int index = 0; // Navigation index within the jumps vector.
